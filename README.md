@@ -30,6 +30,40 @@ Filters and slicers for dynamic analysis
 
 Clean and user-friendly visual design
 
+💻 Key DAX Measures
+Total Customers = 
+COUNT('Customers'[CustomerID])
+
+Churned Customers = 
+CALCULATE(
+    COUNT('Customers'[CustomerID]),
+    'Customers'[Churn] = "Yes"
+)
+
+Churn Rate = 
+DIVIDE(
+    [Churned Customers],
+    [Total Customers]
+)
+
+Retention Rate = 
+1 - [Churn Rate]
+
+🔎 Customer Segmentation Logic
+
+Customer Segment = 
+IF(
+    'Customers'[Balance] > 100000,
+    "High Value",
+    "Regular"
+)
+
+🔄 Data Cleaning
+= Table.TransformColumnTypes(Source,{
+    {"CustomerID", Int64.Type},
+    {"Age", Int64.Type},
+    {"Balance", type number}
+})
 
 📌 Insights Gained
 
