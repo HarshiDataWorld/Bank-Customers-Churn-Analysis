@@ -47,6 +47,25 @@ DIVIDE(
     [Churned Customers],
     [Total Customers]
 )
-
 Retention Rate = 
 1 - [Churn Rate]
+```
+## 🔎 Customer Segmentation Logic
+```
+ Customer Segment = 
+IF(
+    'Customers'[Balance] > 100000,
+    "High Value",
+    "Regular"
+)
+Retention Rate = 
+1 - [Churn Rate]
+```
+## 🔄 Data Cleaning (Power Query)
+```
+= Table.TransformColumnTypes(Source,{
+    {"CustomerID", Int64.Type},
+    {"Age", Int64.Type},
+    {"Balance", type number}
+})
+```
