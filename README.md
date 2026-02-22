@@ -1,36 +1,38 @@
-# Bank-Customers-Churn-Analysis
+# 📊 Customer Churn Analysis – Power BI Project
+
 This project focuses on analyzing customer churn to identify key factors influencing customer retention and churn behavior. The dashboard provides actionable insights for business decision-making.
-📊 Customer Churn Analysis – Power BI Project
 
-🎯 Objectives
+---
 
-Identify churn patterns and high-risk customer segments
+## 🎯 Objectives
 
-Analyze customer behavior and retention metrics
+- Identify churn patterns and high-risk customer segments  
+- Analyze customer behavior and retention metrics  
+- Support data-driven strategies to reduce churn  
 
-Support data-driven strategies to reduce churn
+---
 
-🛠️ Tools & Technologies
+## 🛠️ Tools & Technologies
 
-Power BI
+- Power BI  
+- Excel  
+- DAX  
+- Power Query  
 
-Excel
+---
 
-DAX
+## 📈 Key Features
 
-Power Query
+- Interactive Power BI dashboard  
+- KPIs: Churn Rate, Retention Rate, Customer Segmentation  
+- Filters and slicers for dynamic analysis  
+- Clean and user-friendly visual design  
 
-📈 Key Features
+---
 
-Interactive Power BI dashboard
+## 💻 Key DAX Measures
 
-KPIs: Churn Rate, Retention Rate, Customer Segmentation
-
-Filters and slicers for dynamic analysis
-
-Clean and user-friendly visual design
-
-💻 Key DAX Measures
+```DAX
 Total Customers = 
 COUNT('Customers'[CustomerID])
 
@@ -48,30 +50,3 @@ DIVIDE(
 
 Retention Rate = 
 1 - [Churn Rate]
-
-🔎 Customer Segmentation Logic
-
-Customer Segment = 
-IF(
-    'Customers'[Balance] > 100000,
-    "High Value",
-    "Regular"
-)
-
-🔄 Data Cleaning
-= Table.TransformColumnTypes(Source,{
-    {"CustomerID", Int64.Type},
-    {"Age", Int64.Type},
-    {"Balance", type number}
-})
-
-📌 Insights Gained
-
-Identified key churn drivers
-
-Highlighted customer segments with higher churn risk
-
-Provided recommendations to improve retention
-
-
-
