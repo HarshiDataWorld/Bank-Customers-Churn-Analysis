@@ -51,21 +51,26 @@ Retention Rate =
 1 - [Churn Rate]
 ```
 ## 🔎 Customer Segmentation Logic
-```
+```DAX
  Customer Segment = 
 IF(
     'Customers'[Balance] > 100000,
     "High Value",
     "Regular"
 )
-Retention Rate = 
-1 - [Churn Rate]
 ```
 ## 🔄 Data Cleaning (Power Query)
-```
+```M
 = Table.TransformColumnTypes(Source,{
     {"CustomerID", Int64.Type},
     {"Age", Int64.Type},
     {"Balance", type number}
 })
 ```
+📌 Insights Gained
+
+Identified key churn drivers
+
+Highlighted customer segments with higher churn risk
+
+Suggested data-driven strategies to improve retention
