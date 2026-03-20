@@ -13,7 +13,7 @@ This project treats churn like a crime scene. Every data point is evidence. Ever
 
 ## 📸 Dashboard Preview
 
-![Dashboard Preview](Churn_dashboard.png)
+![Dashboard Preview](Churn_dd.png)
 
 ---
 
